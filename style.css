@@ -14,7 +14,9 @@
   
 .container {
     display: grid;
-    grid-template-columns: 270px auto;
+    /*grid-template-columns: 270px auto;*/
+    /*grid-template-columns: 400px auto;*/
+    grid-template-columns: 35% 65%;
     grid-template-rows: auto;
     grid-template-areas:
         "sidebar main"
@@ -64,11 +66,12 @@ header nav a {
 
 aside {
     height: 100%;
-    width: 270px;
+    width: 321px;
     position: fixed;
     top: 0;
-    left: 0;
-    /*background-color: #f9d202;*/
+    /*left: 30%;*/
+    right: 65%;
+    /* background-color: #f9d202; */
     /*background-image: url("board2.jpg");
     background-size: 1100px;*/
 }
@@ -79,6 +82,7 @@ aside {
     padding-bottom: 0.5em;
     margin-top: 1em;
     margin-left: 1em;
+    /* margin-right: 2em; */
 }
 
 #subtitle {
@@ -166,6 +170,7 @@ main {
     padding: 1em;
     /* padding-bottom: 1em; */
     /* padding-top: 1em; */
+    max-width: 650px;
 }
 
 /* SECTION */
@@ -177,6 +182,17 @@ section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1em;
     margin-bottom: 1em;
+}
+
+section h2 {
+    margin-top: 0em;
+}
+
+#languages {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-template-areas: "programming langs";
 }
   
 footer {
@@ -192,7 +208,26 @@ footer {
     display: none;
 }
 
-/* MEDIA */
+/* ----  MEDIA  ---- */
+
+/* HORIZONTAL < 950px */
+
+@media only screen and (min-width: 768px) and (max-width: 950px){
+
+    .container {
+
+        grid-template-columns: 270px auto;
+
+    }
+
+    aside {
+        height: 100%;
+        width: 270px;
+        position: fixed;
+        top: 0;
+        left: 0
+    }
+}
 
 /* MOBILE */
 
