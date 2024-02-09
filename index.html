@@ -18,6 +18,9 @@
     </head>
 
     <body class="container">
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+          </div>
         <aside class="item-sidebar">
             <div id="board">
                 <h2 id="nametitle">José Ferreira</h2>
@@ -26,7 +29,7 @@
                 <p>
                     I am an aspiring engineer with a passion for all 
                     things computer-related. In my free time, I enjoy reading 
-                    scifi books and following Formula 1 racing.
+                    sci-fi books and following Formula 1 racing.
                 </p>
                 <p>
                     I am dedicated, hardworking and always eager
@@ -137,8 +140,97 @@
                     
                 </p>
         </main>
+        <!-- <a id="darklight-button" href="#">
+            <img src="sun.png" id="darklight">
+        </a> -->
         <footer class="item-footer">
             <p>Copyright &copy; 2023</p>
         </footer>
     </body>
+    
+    <script>
+        window.onscroll = function() {
+            updateProgressBar()
+        };
+      
+        function updateProgressBar() {
+          var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+          var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          var scrolled = (winScroll / height) * 100;
+          document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('section');
+            let delay = 0.5; // Initial delay
+            sections.forEach((section, index) => {
+                section.style.animationDelay = delay * (index + 1) + "s";
+            });
+        });
+
+        /* const DLButton = document.getElementById("darklight-button");
+        
+        DLButton.addEventListener('click', function() {
+            var darklightIcon = document.getElementById('darklight');
+
+            // Check the src attribute of the image element
+            if (darklightIcon.src.includes('sun.png')) {
+                // Switch to moon image
+                darklightIcon.src = 'moon.png';
+            } else {
+                // Switch back to sun image
+                darklightIcon.src = 'sun.png';
+            }
+
+            // Selecting #progress-container
+            const progressContainer = document.querySelector('#progress-container');
+
+            // Selecting body
+            const bodyElement = document.body;
+
+            // Selecting #board
+            const boardElement = document.querySelector('#board');
+
+            // Selecting #darklight
+            const darklightElement = document.querySelector('#darklight');
+
+            // Selecting #board p
+            const boardParagraphs = document.querySelectorAll('#board p');
+
+            // Selecting aside nav li
+            const asideNavListItems = document.querySelectorAll('aside nav li');
+
+            // Selecting #board button
+            const boardButton = document.querySelector('#board button');
+
+            // Selecting #dla
+            const dlaElement = document.querySelector('#dla');
+
+            // Selecting aside nav a
+            const asideNavLinks = document.querySelectorAll('aside nav a');
+
+            // Selecting section
+            const sectionElement = document.querySelector('section');
+
+            // Toggling to light mode or off
+            progressContainer.classList.toggle('light');
+            bodyElement.classList.toggle('light');
+            boardElement.classList.toggle('light');
+            darklightElement.classList.toggle('light');
+            boardParagraphs.forEach(paragraph => {
+                paragraph.classList.toggle('light');
+            });
+            asideNavListItems.forEach(listItem => {
+                listItem.classList.toggle('light');
+            });
+            boardButton.classList.toggle('light');
+            dlaElement.classList.toggle('light');
+            asideNavLinks.forEach(link => {
+                link.classList.toggle('light');
+            });
+            sectionElement.classList.toggle('light');
+            
+        }); */
+
+      </script>
 </html>

@@ -11,6 +11,23 @@
 .item-footer {
     grid-area: footer;
 }
+
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Adjust height as needed */
+    background-color: #000000;
+    z-index: 9999; /* Ensure it's above other content */
+    display: block;
+  }
+  
+#progress-bar {
+    height: 100%;
+    background-color: #1a1efa88; /* Adjust color as needed */
+    width: 0%;
+}
   
 .container {
     display: grid;
@@ -23,7 +40,6 @@
         "footer footer";
 }
 
-
 body {
     font-family: 'Lato', sans-serif;
     margin: 0;
@@ -32,7 +48,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     background-image: url("circuit.jpg");
-    background-size: 1700px;
+    background-size: cover;
 }
   
 header {
@@ -74,6 +90,9 @@ aside {
     /* background-color: #f9d202; */
     /*background-image: url("board2.jpg");
     background-size: 1100px;*/
+    animation: slideInFromTop 1s ease forwards;
+    animation-delay: 0.5s;
+    opacity : 0;
 }
 
 #board {
@@ -83,6 +102,21 @@ aside {
     margin-top: 1em;
     margin-left: 1em;
     /* margin-right: 2em; */
+}
+
+#darklight {
+    position: fixed;
+    display: block;
+    margin: 5px;
+    padding: 8px;
+    width: 35px;
+    z-index: 999;
+    background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.9));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    bottom: 15px;
+    right: 15px;
+    animation: slideInFromRight 1s ease forwards;
+    animation-delay: 0.5s;
 }
 
 #subtitle {
@@ -182,6 +216,9 @@ section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 1em;
     margin-bottom: 1em;
+    opacity: 0;
+    animation: slideInFromRight 1s ease forwards;
+    animation-delay: 0.5s;
 }
 
 section h2 {
@@ -217,6 +254,83 @@ footer {
 
 footer {
     display: none;
+}
+
+/* LIGHT MODE STYLES */
+
+#progress-container.light {
+    background-color: #ffffff;
+}
+
+body.light {
+    background-color: #ffffff;
+}
+
+header.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+header nav a.light {
+    color: #000000;
+}
+
+#board.light {
+    background-color: #ffffff;
+}
+
+#darklight.light {
+    background-color: #ffffff;
+}
+
+#board p.light {
+    color: #000000;
+}
+
+aside nav li.light {
+    color: #000000;
+}
+
+#board button.light {
+    background-color: #ffffff;
+}
+
+#dla.light {
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+aside nav a.light {
+    color: #000000;
+}
+
+section.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ----  ANIMATIONS  ---- */
+  
+/* Define animation for sliding in from the right */
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0; /* Start with opacity 0 */
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1; /* End with opacity 1 */
+    }
+}
+
+
+/* Define animation for sliding in from the top */
+@keyframes slideInFromTop {
+    0% { transform: translateY(-100%);
+        opacity: 0; /* Start with opacity 0 */
+    }
+    100% { transform: translateY(0);
+        opacity: 1; /* End with opacity 1 */}
 }
 
 /* ----  MEDIA  ---- */
@@ -263,6 +377,8 @@ footer {
         position: static;
         height: auto;
         width: auto;
+        animation: none;
+        opacity: 1;
     }
 
     #board {
@@ -295,6 +411,11 @@ footer {
 
     #subtitle {
         display: none;
+    }
+
+    section {
+        animation : none;
+        opacity: 1;
     }
 
 }
