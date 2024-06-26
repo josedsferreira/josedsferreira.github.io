@@ -11,42 +11,6 @@
 .item-footer {
     grid-area: footer;
 }
-
-#progress-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px; /* Adjust height as needed */
-    background-color: #000000;
-    z-index: 9999; /* Ensure it's above other content */
-    display: block;
-  }
-  
-#progress-bar {
-    height: 100%;
-    background-color: #1a1efa88; /* Adjust color as needed */
-    width: 0%;
-}
-
-.floating-corner {
-    position: fixed; /* Stay in place during scroll */
-    bottom: 20px; /* Distance from the bottom */
-    right: 20px; 
-    width: auto;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    padding: 10px;
-    z-index: 1000;
-    opacity: 0;
-    animation: slideInFromBottom 1s ease forwards;
-    animation-delay: 5s;
-}
-
-.floating-corner a {
-    color: white;
-    text-decoration: none;
-}
   
 .container {
     display: grid;
@@ -60,19 +24,46 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
     margin: 0;
-    padding: 0;
-    background-color: #000000ef;
+    padding: 0;/* 
+    background-color: #000000ef; */
     max-width: 100%;
     overflow-x: hidden;
-    background-image: url("circuit.jpg");
-    background-size: cover;
+    /* background-image: url("circuit.jpg");
+    background-size: cover; */
+}
+
+.tui-window {
+    margin-bottom: 20px;
+    color: #FFFF00;
+}
+
+.tui-window legend{
+    background-color: black;
+    color: #00FF00;
+}
+
+.floating-corner {
+    position: fixed; /* Stay in place during scroll */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; 
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    z-index: 1000; 
+}
+
+.floating-corner a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
 }
   
 header {
-    background-color: #333;
-    color: #fff;
+    /* background-color: #333; */
+    /* color: #fff; */
     display: flex;
     justify-content: space-between;
     padding: 1em;
@@ -91,7 +82,7 @@ header nav ul {
 }
   
 header nav a {
-    color: #fff;
+    /* color: #fff; */
     display: block;
     padding: 1em;
     text-decoration: none;
@@ -108,14 +99,14 @@ aside {
     right: 65%;
     /* background-color: #f9d202; */
     /*background-image: url("board2.jpg");
-    background-size: 1100px;*/
+    background-size: 1100px;*//* 
     animation: slideInFromTop 1s ease forwards;
     animation-delay: 0.5s;
-    opacity : 0;
+    opacity : 0; */
 }
 
 #board {
-    background-color: rgba(0, 0, 0, 0.9);
+    /* background-color: rgba(0, 0, 0, 0.9); */
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-top: 1em;
@@ -123,20 +114,6 @@ aside {
     /* margin-right: 2em; */
 }
 
-#darklight {
-    position: fixed;
-    display: block;
-    margin: 5px;
-    padding: 8px;
-    width: 35px;
-    z-index: 999;
-    background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.9));
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    bottom: 15px;
-    right: 15px;
-    animation: slideInFromRight 1s ease forwards;
-    animation-delay: 0.5s;
-}
 
 #subtitle {
     margin-top: 0;
@@ -154,12 +131,13 @@ aside {
 
 aside h1, aside h2, aside h3, aside h4 {
     text-align: center;
-    color: white;
+    /* color: white; */
     /* text-shadow: 1px 1px white; */
 }
 
 #board p {
-    color: white;
+    /* color: white; */
+    font-size: 14px;
     text-align: justify;
     padding-left: 1em;
     padding-right: 1em;
@@ -169,16 +147,15 @@ aside h1, aside h2, aside h3, aside h4 {
 }
 
 aside nav h4 {
-    margin-bottom: -0.8em;
+    margin-bottom: 0.3em;
 }
 
 aside nav li {
     text-decoration: none;
     list-style-type: none;
-    display: inline-block; float: none;
+    display: inline-block; float: none !important;
     text-align: center;
-    color: white;
-    display: inline;
+    /* color: white; */
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
@@ -190,8 +167,8 @@ aside nav ul{
 }
 
 #board button {
-    background-color: black;
-    color: white;
+    /* background-color: black;
+    color: white; */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -200,9 +177,9 @@ aside nav ul{
 #dla {
     text-align: center;
     display: block;
-    color: white;
+    /* color: white; */
     border-radius: 5px;
-    border: 2px solid #ffffff;
+    /* border: 2px solid #ffffff; */
     box-sizing: border-box;
     text-decoration: none;
     margin-left: auto;
@@ -214,7 +191,7 @@ aside nav ul{
 
 aside nav a {
     text-decoration: none;
-    color: white;
+    /* color: white; */
 }
 
 /* MAIN */
@@ -230,14 +207,14 @@ main {
   
 section {
     /*background-color: rgba(0, 0, 0, 0.9);*/
-    background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.6));
+    /* background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.6));
     color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     padding: 1em;
     margin-bottom: 1em;
-    opacity: 0;
+    /* opacity: 0;
     animation: slideInFromRight 1s ease forwards;
-    animation-delay: 0.5s;
+    animation-delay: 0.5s; */
 }
 
 section h2 {
@@ -263,8 +240,8 @@ section h2 {
 }
   
 footer {
-    background-color: #333;
-    color: #fff;
+    /* background-color: #333;
+    color: #fff; */
     padding: 1em;
     text-align: center;
 }
@@ -275,92 +252,7 @@ footer {
     display: none;
 }
 
-/* LIGHT MODE STYLES */
 
-#progress-container.light {
-    background-color: #ffffff;
-}
-
-body.light {
-    background-color: #ffffff;
-}
-
-header.light {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-header nav a.light {
-    color: #000000;
-}
-
-#board.light {
-    background-color: #ffffff;
-}
-
-#darklight.light {
-    background-color: #ffffff;
-}
-
-#board p.light {
-    color: #000000;
-}
-
-aside nav li.light {
-    color: #000000;
-}
-
-#board button.light {
-    background-color: #ffffff;
-}
-
-#dla.light {
-    color: #000000;
-    border: 2px solid #000000;
-}
-
-aside nav a.light {
-    color: #000000;
-}
-
-section.light {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* ----  ANIMATIONS  ---- */
-  
-/* Define animation for sliding in from the right */
-@keyframes slideInFromRight {
-    0% {
-        transform: translateX(100%);
-        opacity: 0; /* Start with opacity 0 */
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1; /* End with opacity 1 */
-    }
-}
-
-/* Define animation for sliding in from the top */
-@keyframes slideInFromTop {
-    0% { transform: translateY(-100%);
-        opacity: 0; /* Start with opacity 0 */
-    }
-    100% { transform: translateY(0);
-        opacity: 1; /* End with opacity 1 */}
-}
-
-@keyframes slideInFromBottom {
-    0% {
-        transform: translateY(100%);
-        opacity: 0; /* Start with opacity 0 */
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1; /* End with opacity 1 */
-    }
-}
 
 /* ----  MEDIA  ---- */
 
@@ -408,14 +300,16 @@ section.light {
         width: auto;
         animation: none;
         opacity: 1;
+        display: flex;
+        justify-content: center; 
     }
 
     #board {
         margin: 1em;
         margin-bottom: 0;
         
-        background-color:rgba(0, 0, 0, 0);
-        background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.6));
+        /* background-color:rgba(0, 0, 0, 0);
+        background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0.6)); */
 
     }
 
