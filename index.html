@@ -12,7 +12,9 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="modal.css" />
         <!--<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">-->
+
         <title>Jose Ferreira's CV</title>
     </head>
 
@@ -86,6 +88,29 @@
                     <li>Web App for academic success prediction using ML</li>
                     <li>Python, Flask, Scikit-Learn, PostgreSQL, Bootstrap, Javascript</li>
                 </ul>
+
+                <!-- Trigger the Modal -->
+                <img id="myImg" src="images/qrgate.png" alt="Snow" style="width:100%;max-width:200px;max-height:200px; object-fit: cover;">
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- The Close Button -->
+                    <span class="close">&times;</span>
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="img01">
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
+                </div>
+                <!-- Trigger the Modal -->
+                <img id="myImg" src="images/qrgateApp.jpg" alt="Snow" style="width:100%;max-width:200px;max-height:200px; object-fit: cover;">
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                    <!-- The Close Button -->
+                    <span class="close">&times;</span>
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="img01">
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
+                </div>
 
                 <h3><a href="https://github.com/josedsferreira/PEPE8-Emulator">PEPE-8 Processor emulator</a></h3>
                 <ul>
@@ -190,9 +215,9 @@
         <!-- <a id="darklight-button" href="#">
             <img src="sun.png" id="darklight">
         </a> -->
-        <footer class="item-footer">
+        <!-- <footer class="item-footer">
             <p>Copyright &copy; 2023</p>
-        </footer>
+        </footer> -->
     </body>
     
     <script>
@@ -278,6 +303,42 @@
             sectionElement.classList.toggle('light');
             
         }); */
+
+
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Get all images and modals
+            const images = document.querySelectorAll('img[id^="myImg"]');
+            const modals = document.querySelectorAll('.modal');
+            const modalImages = document.querySelectorAll('.modal-content');
+            const captions = document.querySelectorAll('[id^="caption"]');
+            const closeButtons = document.querySelectorAll('.close');
+
+            images.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    modals[index].style.display = "block";
+                    modalImages[index].src = img.src;
+                    captions[index].innerHTML = img.alt;
+                });
+            });
+
+            closeButtons.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    modals[index].style.display = "none";
+                });
+            });
+
+            // Close modal when clicking outside of the image
+            modals.forEach((modal, index) => {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            });
+        });
+
+
 
       </script>
 </html>
